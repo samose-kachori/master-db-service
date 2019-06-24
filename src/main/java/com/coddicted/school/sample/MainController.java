@@ -1,4 +1,4 @@
-package com.coddicted.school;
+package com.coddicted.school.sample;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.coddicted.school.sample.model.Sample;
+import com.coddicted.school.sample.repo.SampleRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

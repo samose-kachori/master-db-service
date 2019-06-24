@@ -1,4 +1,4 @@
-package com.coddicted.school;
+package com.coddicted.school.sample.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
