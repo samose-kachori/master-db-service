@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @Controller // This means that this class is a Controller
 @RequestMapping(path = "/demo") // This means URL's start with /demo (after Application path)
+@Api(description = "The first REST API - created for Demo only")
 public class MainController {
 
   private static Logger logger = LoggerFactory.getLogger(MainController.class);
@@ -20,6 +24,7 @@ public class MainController {
   private SampleRepository userRepository;
 
   @GetMapping(path = "/add") // Map ONLY GET Requests
+  @ApiOperation(code = 200, value = "Add a new sample to the DB")
   public @ResponseBody String addNewSample(@RequestParam String name, @RequestParam String email) {
     // @ResponseBody means the returned String is the response, not a view name
     // @RequestParam means it is a parameter from the GET or POST request
@@ -34,7 +39,8 @@ public class MainController {
   }
 
   @GetMapping(path = "/all")
-  public @ResponseBody Iterable<Sample> getAllUsers() {
+  @ApiOperation(code = 200, value = "Get all the saved samples")
+  public @ResponseBody Iterable<Sample> getAllSamples() {
     // This returns a JSON or XML with the users
     return userRepository.findAll();
   }

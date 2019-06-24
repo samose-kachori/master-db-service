@@ -17,3 +17,8 @@ Building the executable Jar:
   `java -Dspring.profiles.active=prod -jar build/libs/clay-setup-0.1.0.jar`
 
   default profile is set to be "prod"
+  
+  Accessing Swagger API documentation
+  
+  Raw data rendering: http://localhost:8080/v2/api-docs
+  UI rendering: http://localhost:8080/swagger-ui.html
